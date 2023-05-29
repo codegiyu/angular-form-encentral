@@ -1,0 +1,56 @@
+<main>
+    <form class="ui form">
+        <div class="form-group">
+            <div class="field">
+                <label>First Name</label>
+                <div class="field">
+                    <input ngModel id="firstName"  type="text" name="firstName" placeholder="First Name">
+                </div>
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <div class="field">
+                    <input ngModel id="lastName"  type="text" name="lastName" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <div class="field">
+                    <input ngModel id="email"  type="email" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="field">
+                <label>Phone Number</label>
+                <div class="field">
+                    <input ngModel id="phone"  type="number" name="phone" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="field">
+                <label>Country</label>
+                <select ngModel id="country" class="ui fluid dropdown">
+                    <option value="" selected disabled>Select a Country</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Organization</label>
+                <select ngModel id="organization" class="ui fluid dropdown">
+                    <option value=""selected disabled>Select an Organization</option>
+                    <option value="Frontend Developer">Frontend Developer</option>
+                    <option value="Backend Developer">Backend Developer</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Devops Engineer">Devops Engineer</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Successful</label>
+                <select ngModel id="successful" class="ui fluid dropdown">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
+        <div class="button-line">
+            <button class="ui button" tabindex="0">Submit</button>
+        </div>
+      </form>
+</main>
