@@ -4,7 +4,16 @@
             <div class="field inverted">
                 <span class="label">First Name</span>
                 <div class="field">
-                    <input ngModel #firstName="ngModel" required type="text" name="firstName" placeholder="First Name" class="form-control">
+                    <input 
+                        ngModel 
+                        #firstName="ngModel" 
+                        required 
+                        type="text" 
+                        name="firstName"
+                        id="firstName"
+                        placeholder="First Name" 
+                        class="form-control"
+                    >
                     <div *ngIf="firstName.control.touched && firstName.control.errors" class="error-line">
                         <span *ngIf="firstName.control.touched && firstName.control.errors['required']" class="ui pointing red basic label">
                             First name is required
@@ -15,7 +24,16 @@
             <div class="field">
                 <span class="label">Last Name</span>
                 <div class="field">
-                    <input ngModel #lastName="ngModel" required type="text" name="lastName" placeholder="Last Name" class="form-control">
+                    <input 
+                        ngModel 
+                        #lastName="ngModel" 
+                        required 
+                        type="text" 
+                        name="lastName" 
+                        id="lastName" 
+                        placeholder="Last Name" 
+                        class="form-control"
+                    >
                     <div *ngIf="lastName.control.touched && lastName.control.errors" class="error-line">
                         <span *ngIf="lastName.control.touched && lastName.control.errors['required']" class="ui pointing red basic label">
                             Last name is required
@@ -33,7 +51,9 @@
                         required
                         (change)="log(email)" 
                         type="email" 
-                        name="email" placeholder="Email"
+                        name="email" 
+                        id="email" 
+                        placeholder="Email"
                         class="form-control"
                     >
                     <div *ngIf="email.control.touched && email.control.errors" class="error-line">
@@ -57,6 +77,7 @@
                         required
                         type="number" 
                         name="phone" 
+                        id="phone" 
                         placeholder="Phone Number" 
                         class="form-control"
                     >
@@ -75,7 +96,7 @@
             </div>
             <div class="field">
                 <span class="label">Country</span>
-                <select ngModel #country="ngModel" name="country" class="ui fluid dropdown form-control" required>
+                <select ngModel #country="ngModel" name="country" id="country" class="ui fluid dropdown form-control" required>
                     <option value="" selected disabled>Select a Country</option>
                     <option *ngFor="let item of lis" [value]="item.value">
                         {{ item.text }}
@@ -89,7 +110,7 @@
             </div>
             <div class="field">
                 <span class="label">Organization</span>
-                <select ngModel #organization="ngModel" name="organization" class="ui fluid dropdown form-control" required>
+                <select ngModel #organization="ngModel" name="organization" id="organization" class="ui fluid dropdown form-control" required>
                     <option value=""selected disabled>Select an Organization</option>
                     <option value="Frontend Developer">Frontend Developer</option>
                     <option value="Backend Developer">Backend Developer</option>
@@ -104,7 +125,7 @@
             </div>
             <div class="field">
                 <span class="label">Successful</span>
-                <select ngModel #successful="ngModel" name="successful" class="ui fluid dropdown form-control" required>
+                <select ngModel #successful="ngModel" name="successful" id="successful" class="ui fluid dropdown form-control" required>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
@@ -116,7 +137,7 @@
             </div>
         </div>
         <div class="button-line">
-            <button class="ui button" tabindex="0">Submit</button>
+            <button id="submit" class="ui button" tabindex="0">Submit</button>
         </div>
       </form>
 </main>

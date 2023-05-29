@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { Observable, fromEvent } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 // import {SuiModule} from 'ng2-semantic-ui';
 // import { SuiCheckboxModule } from 'ng2-semantic-ui/dist';
 
@@ -20,7 +22,11 @@ import { SuccessPageComponent } from './success-page/success-page.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // Observable,
+    // fromEvent,
+    // map,
+    // tap,
     // SuiCheckboxModule
   ],
   providers: [],
