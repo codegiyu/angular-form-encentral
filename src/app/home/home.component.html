@@ -1,52 +1,118 @@
 <main>
-    <form class="ui form">
+    <form class="ui form" >
         <div class="form-group">
-            <div class="field">
-                <label>First Name</label>
+            <div class="field inverted">
+                <span class="label">First Name</span>
                 <div class="field">
-                    <input ngModel id="firstName"  type="text" name="firstName" placeholder="First Name">
+                    <input ngModel #firstName="ngModel" required type="text" name="firstName" placeholder="First Name" class="form-control">
+                    <div *ngIf="firstName.control.touched && firstName.control.errors" class="error-line">
+                        <span *ngIf="firstName.control.touched && firstName.control.errors['required']" class="ui pointing red basic label">
+                            First name is required
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="field">
-                <label>Last Name</label>
+                <span class="label">Last Name</span>
                 <div class="field">
-                    <input ngModel id="lastName"  type="text" name="lastName" placeholder="Last Name">
+                    <input ngModel #lastName="ngModel" required type="text" name="lastName" placeholder="Last Name" class="form-control">
+                    <div *ngIf="lastName.control.touched && lastName.control.errors" class="error-line">
+                        <span *ngIf="lastName.control.touched && lastName.control.errors['required']" class="ui pointing red basic label">
+                            Last name is required
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="field">
-                <label>Email</label>
+                <span class="label">Email</span>
                 <div class="field">
-                    <input ngModel id="email"  type="email" name="email" placeholder="Email">
+                    <input 
+                        ngModel 
+                        #email="ngModel" 
+                        pattern='(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@[*[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+]*'
+                        required
+                        (change)="log(email)" 
+                        type="email" 
+                        name="email" placeholder="Email"
+                        class="form-control"
+                    >
+                    <div *ngIf="email.control.touched && email.control.errors" class="error-line">
+                        <span *ngIf="email.control.touched && email.control.errors['pattern']" class="ui pointing red basic label">
+                            Email address is invalid
+                        </span>
+                        <span *ngIf="email.control.touched && email.control.errors['required']" class="ui pointing red basic label">
+                            Email address is required
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="field">
-                <label>Phone Number</label>
+                <span class="label">Phone Number</span>
                 <div class="field">
-                    <input ngModel id="phone"  type="number" name="phone" placeholder="Phone Number">
+                    <input 
+                        ngModel 
+                        #phone="ngModel" 
+                        minLength="11" 
+                        maxLength="11" 
+                        required
+                        type="number" 
+                        name="phone" 
+                        placeholder="Phone Number" 
+                        class="form-control"
+                    >
+                    <div *ngIf="phone.control.touched && phone.control.errors" class="error-line">
+                        <span *ngIf="phone.control.touched && phone.control.errors['required']" class="ui pointing red basic label">
+                            Phone number is required
+                        </span>
+                        <span *ngIf="phone.control.touched && phone.control.errors['minLength']" class="ui pointing red basic label">
+                            Phone number should be 11 digits
+                        </span>
+                        <span *ngIf="phone.control.touched && phone.control.errors['maxLength']" class="ui pointing red basic label">
+                            Phone number should be 11 digits
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="field">
-                <label>Country</label>
-                <select ngModel id="country" class="ui fluid dropdown">
+                <span class="label">Country</span>
+                <select ngModel #country="ngModel" name="country" class="ui fluid dropdown form-control" required>
                     <option value="" selected disabled>Select a Country</option>
+                    <option *ngFor="let item of lis" [value]="item.value">
+                        {{ item.text }}
+                    </option>
                 </select>
+                <div *ngIf="country.control.touched && country.control.errors" class="error-line">
+                    <span *ngIf="country.control.touched && country.control.errors['required']" class="ui pointing red basic label">
+                        Country is required
+                    </span>
+                </div>
             </div>
             <div class="field">
-                <label>Organization</label>
-                <select ngModel id="organization" class="ui fluid dropdown">
+                <span class="label">Organization</span>
+                <select ngModel #organization="ngModel" name="organization" class="ui fluid dropdown form-control" required>
                     <option value=""selected disabled>Select an Organization</option>
                     <option value="Frontend Developer">Frontend Developer</option>
                     <option value="Backend Developer">Backend Developer</option>
                     <option value="Designer">Designer</option>
                     <option value="Devops Engineer">Devops Engineer</option>
                 </select>
+                <div *ngIf="organization.control.touched && organization.control.errors" class="error-line">
+                    <span *ngIf="organization.control.touched && organization.control.errors['required']" class="ui pointing red basic label">
+                        Organization is required
+                    </span>
+                </div>
             </div>
             <div class="field">
-                <label>Successful</label>
-                <select ngModel id="successful" class="ui fluid dropdown">
+                <span class="label">Successful</span>
+                <select ngModel #successful="ngModel" name="successful" class="ui fluid dropdown form-control" required>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
+                <div *ngIf="successful.control.touched && successful.control.errors" class="error-line">
+                    <span *ngIf="successful.control.touched && successful.control.errors['required']" class="ui pointing red basic label">
+                        Successful is required
+                    </span>
+                </div>
             </div>
         </div>
         <div class="button-line">

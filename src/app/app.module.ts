@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 // import {SuiModule} from 'ng2-semantic-ui';
 // import { SuiCheckboxModule } from 'ng2-semantic-ui/dist';
 
@@ -17,6 +19,8 @@ import { SuccessPageComponent } from './success-page/success-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule
     // SuiCheckboxModule
   ],
   providers: [],

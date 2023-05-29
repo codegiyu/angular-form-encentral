@@ -14,9 +14,27 @@ main {
         & > .field {
             margin-bottom: 1.5rem;
             
-            & label {
+            & > .label {
                 color: white;
                 font-weight: 400;
+            }
+
+            & .form-control {
+                padding-top: 8px;
+                padding-bottom: 8px;
+
+                &.ng-invalid {
+                    border: 1.5px solid red;
+                }
+            }
+
+            & .dropdown {
+                padding-top: 8px;
+                padding-bottom: 8px;
+
+                &.ng-invalid {
+                    border: 1.5px solid red;
+                }
             }
         }
 
@@ -33,6 +51,10 @@ main {
                 background: #4BB543;
                 color: white;
             }
+        }
+
+        option {
+            width: 100%;
         }
 
     }
