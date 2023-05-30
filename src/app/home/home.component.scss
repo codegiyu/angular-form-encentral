@@ -55,7 +55,32 @@ main {
 
         option {
             width: 100%;
-        }
+        }    
+    }
 
+    @media only screen and (max-width: 1024px) {
+        padding: 50px;
+
+        & form {
+            width: 600px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        padding: 50px 30px;
+
+        & form {
+            width: 400px;
+            padding: 5rem 2rem 4rem;
+        }
+    }
+
+    @media only screen and (max-width: 475px) {
+        padding: 50px 16px;
+
+        & form {
+            width: 600px;
+            padding: 5rem 1rem 4rem;
+        }
     }
 }

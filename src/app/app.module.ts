@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
-import { Observable, fromEvent } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 // import {SuiModule} from 'ng2-semantic-ui';
 // import { SuiCheckboxModule } from 'ng2-semantic-ui/dist';
 
@@ -23,11 +23,8 @@ import { SuccessPageComponent } from './success-page/success-page.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    // Observable,
-    // fromEvent,
-    // map,
-    // tap,
-    // SuiCheckboxModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
